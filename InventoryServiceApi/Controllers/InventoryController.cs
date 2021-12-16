@@ -26,5 +26,14 @@ namespace InventoryServiceApi.Controllers
 
             return Ok(result);
         }
+
+        [HttpPost]
+        [Route("[controller]/add")]
+        public async Task<IActionResult> AddProperty(Property property)
+        {
+            var result = await _propertyRepo.AddProperty(property);
+
+            return Ok(result);
+        }
     }
 }

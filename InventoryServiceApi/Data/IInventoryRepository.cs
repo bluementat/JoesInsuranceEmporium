@@ -10,6 +10,6 @@ namespace InventoryServiceApi.Data
         Task<Property> FindById(Guid Id);
         Task<List<Property>> GetInventory();
 
-        Task<Guid> AddProperty(Property property);
+        Task<Property> AddProperty(Property property);
     }
 }

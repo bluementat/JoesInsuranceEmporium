@@ -25,11 +25,11 @@ namespace InventoryServiceApi.Data
             return await Task.FromResult(_properties.First(p => p.Id == Id));
         }
 
-        public async Task<Guid> AddProperty(Property property)
+        public async Task<Property> AddProperty(Property property)
         {
             _properties.Add(property);
 
-            return await Task.FromResult(property.Id);
+            return await Task.FromResult(property);
         }
     }
 }
