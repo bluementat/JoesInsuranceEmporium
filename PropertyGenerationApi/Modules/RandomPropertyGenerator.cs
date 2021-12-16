@@ -65,7 +65,7 @@ namespace PropertyGenerationApi.Modules
 
             if (_delays)
             {
-                await Task.Delay(_random.Next(0, 4000));
+                await Task.Delay(_random.Next(0, 5) * 1000);
             }
 
             return result;

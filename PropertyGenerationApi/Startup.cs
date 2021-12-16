@@ -32,7 +32,7 @@ namespace PropertyGenerationApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PropertyGenerationApi", Version = "v1" });
             });
-            services.AddSingleton<IRandomPropertyGenerator>(rpg => new RandomPropertyGenerator(false));
+            services.AddSingleton<IRandomPropertyGenerator>(rpg => new RandomPropertyGenerator(true));
                 
         }
 
