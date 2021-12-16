@@ -11,39 +11,7 @@ namespace PropertyGenerationApi.Modules
     {
         private Random _random { get; set; }
         private readonly bool _delays;
-        private StringBuilder _stringBuilder;
-
-        private static readonly string[] StreetNames =
-        {
-            "Sixth Ave.",
-            "First Ave.",
-            "Main St.",
-            "Second St.",
-            "Elms Rd.",
-            "Broadway Dr.",
-            "Franklin Ave.",
-            "Washington St.",
-            "Michigan Ave.",
-            "Cook St.",
-            "Park Ave.",
-            "Third St.",
-            "Baker Rd.",
-            "Detroit St."
-        };
-
-        private static readonly string[] CityNames =
-        {
-            "Detroit",
-            "Ann Arbor",
-            "Lansing",
-            "Swartz Creek",
-            "Grand Rapids",
-            "Flint",
-            "Saginaw",
-            "Kalamazoo",
-            "Traverse City",
-            "Alpena"
-        };
+        private StringBuilder _stringBuilder;        
 
         public RandomPropertyGenerator(bool Delays)
         {
@@ -56,9 +24,12 @@ namespace PropertyGenerationApi.Modules
         {
             var result = new Property();
             result.Id = Guid.NewGuid();
-            result.Title = "";
+            result.Title =
+                RandomData.TitleName_FirstName[_random.Next(0, RandomData.TitleName_FirstName.Length)] +
+                " " +
+                RandomData.TitleName_LastName[_random.Next(0, RandomData.TitleName_LastName.Length)];
             result.StreetAddress = CreateAddress();
-            result.City = CityNames[_random.Next(0, CityNames.Length - 1)];
+            result.City = RandomData.CityNames[_random.Next(0, RandomData.CityNames.Length - 1)];
             result.State = "MI";
             result.Size = _random.Next(1000, 12000);
             result.PropertyType = (LineType)_random.Next(0, 2);
@@ -78,8 +49,8 @@ namespace PropertyGenerationApi.Modules
             int rnd = _random.Next(100, 10000);
             _stringBuilder.Append(rnd.ToString());
 
-            rnd = _random.Next(0, StreetNames.Length - 1);
-            _stringBuilder.Append(" " + StreetNames[rnd]);
+            rnd = _random.Next(0, RandomData.StreetNames.Length - 1);
+            _stringBuilder.Append(" " + RandomData.StreetNames[rnd]);
 
             return _stringBuilder.ToString();
         }
