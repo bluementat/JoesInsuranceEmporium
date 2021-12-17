@@ -28,7 +28,7 @@ namespace InventoryServiceApi.Controllers
         }
 
         [HttpPost]
-        [Route("[controller]/add")]
+        [Route("add")]
         public async Task<IActionResult> AddProperty(Property property)
         {
             var result = await _propertyRepo.AddProperty(property);

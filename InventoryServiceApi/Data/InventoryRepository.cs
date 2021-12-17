@@ -27,8 +27,11 @@ namespace InventoryServiceApi.Data
 
         public async Task<Property> AddProperty(Property property)
         {
-            _properties.Add(property);
-
+            if (_properties.Count < 100)
+            {
+                _properties.Add(property);
+            }
+            
             return await Task.FromResult(property);
         }
     }

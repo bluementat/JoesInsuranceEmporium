@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PropertyGenerationApi", "Pr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JoesInsuranceEmporium.DataClasses", "JoesInsuranceEmporium.DataClasses\JoesInsuranceEmporium.DataClasses.csproj", "{504A2C6C-4657-4E86-B11A-6944EA6EFC67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryServiceApi", "InventoryServiceApi\InventoryServiceApi.csproj", "{11634935-B2AD-45C8-8203-B99BA705B028}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InventoryServiceApi", "InventoryServiceApi\InventoryServiceApi.csproj", "{11634935-B2AD-45C8-8203-B99BA705B028}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
