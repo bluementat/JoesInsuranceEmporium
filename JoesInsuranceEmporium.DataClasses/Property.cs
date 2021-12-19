@@ -15,6 +15,7 @@ namespace JoesInsuranceEmporium.DataClasses
         public string State { get; set; }        
         public int Size { get; set; }
         public LineType PropertyType { get; set; }
+        public Decimal AppraisedValue { get; set; }
     }
 
     public enum LineType
